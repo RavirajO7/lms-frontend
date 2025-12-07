@@ -7,7 +7,7 @@ export default function Dashboard(){
   useEffect(()=>{ fetchStats() },[])
   async function fetchStats(){
     try{
-      const branches= await API.get('/branches')
+      const branches= await API.get('/branches/all')
       const classes = await API.get('/classes')
       const students = await API.get('/students')
       setStats({ branches:branches.data.length, classes: classes.data.length, students: students.data.length })

@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 body { font-family: Arial, sans-serif; margin:0; padding:20px; background:#f5f7fb; }
 .container { max-width:1000px; margin:0 auto; background:white; padding:20px; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.05); }
 .header { display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; }
@@ -9,3 +14,12 @@ th,td { text-align:left; padding:8px; border-bottom:1px solid #eee; }
 .small{ font-size:0.9rem; color:#555; }
 .form-row { display:flex; gap:8px; }
 .card { padding:12px; border:1px solid #eef2ff; border-radius:8px; background:#fff; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out;
+}
