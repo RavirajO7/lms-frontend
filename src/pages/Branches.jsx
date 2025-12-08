@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import Header from '../components/Header'
 import API from '../api/api'
 import Spinner from '../components/ui/Spinner'
-import Modal from '../components/ui/Modal'
 
 export default function Branches() {
   const [list, setList] = useState([])

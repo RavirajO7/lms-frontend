@@ -6,6 +6,7 @@ import Classes from './pages/Classes'
 import Syllabus from './pages/Syllabus'
 import TeacherPanel from './pages/TeacherPanel'
 import PrivateRoute from './components/PrivateRoute'
+import Admins from './pages/Admins'
 
 export default function App(){
   return (
@@ -17,6 +18,8 @@ export default function App(){
       <Route path='/classes' element={<PrivateRoute><Classes /></PrivateRoute>} />
       <Route path='/syllabus' element={<PrivateRoute><Syllabus /></PrivateRoute>} />
       <Route path='/teacher' element={<PrivateRoute><TeacherPanel /></PrivateRoute>} />
+      <Route path="/admins" element={<PrivateRoute><Admins /></PrivateRoute>} />
+      <Route path='*' element={<h1 className="text-center mt-20 text-3xl">404 - Page Not Found</h1>} />
     </Routes>
   )
 }

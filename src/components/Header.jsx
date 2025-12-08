@@ -8,6 +8,7 @@ export default function Header(){
       <h2>School LMS</h2>
       <div className='nav'>
         <Link to='/dashboard'>Dashboard</Link>
+        <Link to='/admins'>Admins</Link>
         <Link to='/branches'>Branches</Link>
         <Link to='/classes'>Classes</Link>
         <Link to='/syllabus'>Syllabus</Link>
