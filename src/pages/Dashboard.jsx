@@ -8,7 +8,7 @@ export default function Dashboard(){
   async function fetchStats(){
     try{
       const branches= await API.get('/branches/all')
-      const classes = await API.get('/classes')
+      const classes = await API.get('/classes/all')
       const students = await API.get('/students')
       setStats({ branches:branches.data.length, classes: classes.data.length, students: students.data.length })
     }catch(e){ console.error(e) }
