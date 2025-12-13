@@ -1,18 +1,22 @@
-export default function Modal({ children, onClose }) {
+export default function Modal({ open, onClose, title, children }) {
+  if (!open) return null;
+
   return (
-    <div className=" modal-overlay fixed inset-0 bg-black/50 flex justify-center items-center z-[9999]">
-      
-      <div className="relative bg-white shadow-2xl rounded-xl w-[450px] p-6">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
+      <div className="bg-white w-full max-w-lg rounded-xl shadow-lg">
+        {/* Header */}
+        <div className="flex justify-between items-center px-5 py-3 border-b">
+          <h2 className="text-lg font-semibold">{title}</h2>
+          <button
+            onClick={onClose}
+            className="text-gray-500 hover:text-gray-700 text-xl"
+          >
+            ✕
+          </button>
+        </div>
 
-        {/* FLOATING CROSS BUTTON */}
-        <button
-          onClick={onClose}
-          className="absolute -top-4 -right-4 bg-white h-10 w-10 rounded-full shadow-md border text-xl font-bold flex justify-center items-center hover:bg-gray-100"
-        >
-          ×
-        </button>
-
-        {children}
+        {/* Body */}
+        <div className="p-5">{children}</div>
       </div>
     </div>
   );
