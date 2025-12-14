@@ -1,16 +1,18 @@
 import React, { useState } from 'react'
 import API from '../api/api'
+import { useNavigate } from 'react-router-dom'
 export default function Login(){
   const [email,setEmail]=useState('super@school.com')
   const [password,setPassword]=useState('password')
   const [err,setErr]=useState('')
+  const navigate = useNavigate()
   const submit = async ()=>{
     try{
       const res = await API.post('/auth/login',{ email,password })
       if(res.data.token){
         localStorage.setItem('token', res.data.token);
         localStorage.setItem('user', JSON.stringify(res.data.user));
-        window.location.href = '/dashboard';
+        navigate('/dashboard');
       } else setErr('Login failed');
     }catch(e){ setErr(e.response?.data?.message || e.message) }
   }
