@@ -76,6 +76,9 @@ export default function Header() {
         <NavLink to="/syllabus" style={linkStyle}>
           Syllabus
         </NavLink>
+        <NavLink to="/students" style={linkStyle}>
+          Students
+        </NavLink>
 
         <button
           onClick={logout}

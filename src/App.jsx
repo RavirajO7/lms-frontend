@@ -7,6 +7,9 @@ import Syllabus from './pages/Syllabus'
 import PrivateRoute from './components/PrivateRoute'
 import Admins from './pages/Admins'
 import Teachers from './pages/Teachers'
+import Students from './pages/Students'
+import SyllabusProgress from './pages/SyllabusProgress'
+import Reports from './pages/Reports'
 // import SyllabusList from './pages/SyllabusList'
 // import SyllabusContent from './pages/SyllabusContent'
 
@@ -22,6 +25,9 @@ export default function App(){
       {/* <Route path="/syllabus/:syllabusId" element={<SyllabusContent />} /> */}
       <Route path='/teacher' element={<PrivateRoute><Teachers /></PrivateRoute>} />
       <Route path="/admins" element={<PrivateRoute><Admins /></PrivateRoute>} />
+      <Route path="/students" element={<PrivateRoute><Students /></PrivateRoute>} />
+      <Route path="/progress" element={<PrivateRoute><SyllabusProgress /></PrivateRoute>} />
+      <Route path="/reports" element={<PrivateRoute><Reports /></PrivateRoute>} />
       <Route path='*' element={<h1 className="text-center mt-20 text-3xl">404 - Page Not Found</h1>} />
     </Routes>
   )
